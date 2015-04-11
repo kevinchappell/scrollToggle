@@ -1,97 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+  <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>ScrollToggle by kevinchappell</title>
-  </head>
+  <title>ScrollToggle by Kevin Chappell @kevinchappell</title>
+</head>
 
-  <body>
-    <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>ScrollToggle</h1>
-          <h2>jQuery plugin for mobile sticky menu</h2>
-        </header>
-
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/kevinchappell/scrollToggle/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/kevinchappell/scrollToggle/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/kevinchappell/scrollToggle" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <p><a href="https://codeclimate.com/github/kevinchappell/scrollToggle"><img src="https://codeclimate.com/github/kevinchappell/scrollToggle/badges/gpa.svg" alt="Code Climate"></a></p>
-
-<h1>
+<body>
+  <div id="container">
+    <div class="inner">
+      <header>
+        <h1>ScrollToggle</h1>
+        <h2>jQuery plugin for mobile sticky menu</h2>
+      </header>
+      <section id="downloads" class="clearfix">
+        <a href="https://github.com/kevinchappell/scrollToggle/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+        <a href="https://github.com/kevinchappell/scrollToggle/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+        <a href="https://github.com/kevinchappell/scrollToggle" id="view-on-github" class="button"><span>View on GitHub</span></a>
+      </section>
+      <hr>
+      <section id="main_content">
+        <p>
+          <a href="https://codeclimate.com/github/kevinchappell/scrollToggle"><img src="https://codeclimate.com/github/kevinchappell/scrollToggle/badges/gpa.svg" alt="Code Climate"></a>
+        </p>
+        <h1>
 <a id="scroll-toggle" class="anchor" href="#scroll-toggle" aria-hidden="true"><span class="octicon octicon-link"></span></a>scroll-toggle</h1>
-
-<p>A jQuery plugin for making sticky mobile menus that toggle themselves accordnig to the user's scrolling. User scrolls down the top menu hides itself. Scrolling up reveals the menu again.</p>
-
-<p>Has support for bottom or top stickiness.</p>
-
-<h2>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://kevinchappell.github.io/scrollToggle/example">Demo</a>
+        <p>A jQuery plugin for making sticky mobile menus that toggle themselves accordnig to the user's scrolling. User scrolls down the top menu hides itself. Scrolling up reveals the menu again.</p>
+        <p>Has support for bottom or top stickiness.</p>
+        <h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true" target="_blank"><span class="octicon octicon-link"></span></a><a href="http://kevinchappell.github.io/scrollToggle/example">Demo</a>
 </h2>
-
-<h2>
-<a id="used-by-flipboard" class="anchor" href="#used-by-flipboard" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://about.flipboard.com/">Used by Flipboard</a>
-</h2>
-
-<h2>
+        <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
-
-<pre><code>  jQuery(document).ready(function() {
+        <pre><code>  jQuery(document).ready(function() {
     $('header').scrollToggle();
     $('footer').scrollToggle({stick: 'bottom'});
   });
 </code></pre>
-
-<h2>
+        <h2>
 <a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h2>
-
-<p>All contributions are welcome and there is even a build script to help aid your development.</p>
-
-<p>Get Started: <code>git clone https://github.com/kevinchappell/scroll-toggle scroll-toggle</code></p>
-
-<p>Then :
-<code>cd scroll-toggle &amp;&amp; npm install &amp;&amp; gulp</code></p>
-
-<p>You should now have the plugin's example running locally. Any changes made to the source files will be recompiled and the example page refreshed in the browser.</p>
-
-<h2>
+        <p>All contributions are welcome and there is even a build script to help aid your development.</p>
+        <p>Get Started: <code>git clone https://github.com/kevinchappell/scroll-toggle scroll-toggle</code></p>
+        <p>Then :
+          <code>cd scroll-toggle &amp;&amp; npm install &amp;&amp; gulp</code></p>
+        <p>You should now have the plugin's example running locally. Any changes made to the source files will be recompiled and the example page refreshed in the browser.</p>
+        <h2>
 <a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
-
-<p>Add tests.</p>
-        </section>
-
-        <footer>
-          ScrollToggle is maintained by <a href="https://github.com/kevinchappell">kevinchappell</a><br>
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-                  <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-4784386-25");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-      </div>
+        <p>Add tests.</p>
+      </section>
+      <footer>
+        ScrollToggle is maintained by <a href="https://github.com/kevinchappell">kevinchappell</a>
+        <br> This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+      </footer>
+      <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-4784386-25");
+        pageTracker._trackPageview();
+      } catch (err) {}
+      </script>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
