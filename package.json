@@ -1,6 +1,6 @@
 {
 	"name": "scroll-toggle",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "Kevin Chappell <kevin.b.chappell@gmail.com>",
 	"description": "jQuery plugin for mobile sticky menu",
 	"license": "MIT",

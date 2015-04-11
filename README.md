@@ -1,11 +1,11 @@
-[![Code Climate](https://codeclimate.com/github/kevinchappell/scroll-toggle/badges/gpa.svg)](https://codeclimate.com/github/kevinchappell/scroll-toggle)
+[![Code Climate](https://codeclimate.com/github/kevinchappell/scrollToggle/badges/gpa.svg)](https://codeclimate.com/github/kevinchappell/scrollToggle)
 # scroll-toggle #
 
 A jQuery plugin for making sticky mobile menus that toggle themselves accordnig to the user's scrolling. User scrolls down the top menu hides itself. Scrolling up reveals the menu again.
 
 Has support for bottom or top stickiness.
 
-## [Demo](http://kevinchappell.github.io/scroll-toggle/)
+## [Demo](http://kevinchappell.github.io/scrollToggle/)
 ## [Used by Flipboard](https://about.flipboard.com/)
 
 ## Usage
