@@ -40,8 +40,6 @@ gulp.task('js', function() {
 	gulp.src([
 			'src/js/scroll-toggle.js'
 		])
-		.pipe(concat('scroll-toggle.js'))
-		.pipe(gulp.dest('dist/js/'))
 		.pipe(ugly())
 		.pipe(concat('scroll-toggle.min.js'))
 		.pipe(gulp.dest('dist/js/'));
