@@ -1,0 +1,56 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 48px 20px;
+	font-family: sans-serif;
+	color:#222;
+}
+
+body footer,
+body header {
+	position: fixed;
+	height: 28px;
+	width: 100%;
+	left: 0;
+	font-size:1.5em;
+	padding: 10px;
+}
+
+body header {
+	top: 0;
+	background: #fff;
+	color: #000;
+	box-shadow: 0 2px 3px #333;
+}
+
+body header nav {
+	width: 60px;
+	height: 0;
+	position: relative;
+	padding-top: 48px;
+	overflow: hidden;
+	border-left: 1px solid #333;
+	float: right;
+	margin: -10px 10px 0 0;
+}
+
+body footer {
+	bottom: 0;
+	background-color: #000;
+	color: #fff;
+}
+
+nav:before {
+	position: absolute;
+	top: 0;
+	font-size: 1.75em;
+	content: '\2261';
+	display: block;
+	text-align: center;
+	width: 100%;
+}
