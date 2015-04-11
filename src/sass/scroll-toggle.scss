@@ -1,0 +1,14 @@
+.stick-top,
+.stick-bottom {
+	position: fixed;
+}
+
+.stickTop {
+	top: 0;
+	bottom: auto;
+}
+
+.stickBottom {
+	top: auto;
+	bottom: 0;
+}
