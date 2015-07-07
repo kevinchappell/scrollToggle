@@ -1,25 +1,38 @@
 (function($, window, document, undefined) {
 	'use strict';
 
-	if (typeof window.requestAnimFrame === 'undefined') {
-		window.requestAnimFrame = (function() {
-			return window.requestAnimationFrame ||
-				window.webkitRequestAnimationFrame ||
-				window.mozRequestAnimationFrame ||
-				function(callback) {
-					window.setTimeout(callback, 1000 / 60);
-				};
-		})();
+	let vendors = ['ms', 'moz', 'webkit', 'o'];
+	let lastTime = 0;
+
+	for (let x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+		let vendor = vendors[x];
+		window.requestAnimationFrame = window[`${vendor}RequestAnimationFrame`];
+		window.cancelAnimationFrame = window[`${vendor}CancelAnimationFrame`] || window[`${vendor}CancelRequestAnimationFrame`];
+	}
+
+	if (!window.requestAnimationFrame) {
+		window.requestAnimationFrame = (callback) => {
+			let currTime = new Date().getTime();
+			let timeToCall = Math.max(0, 4 - (currTime - lastTime));
+			let id = window.setTimeout(() => callback(currTime + timeToCall), timeToCall);
+
+			lastTime = currTime + timeToCall;
+			return id;
+		};
+	}
+
+	if (!window.cancelAnimationFrame) {
+		window.cancelAnimationFrame = (id) => clearTimeout(id);
 	}
 
 	$.fn.scrollToggle = function(options) {
 		var opts = $.extend({}, $.fn.scrollToggle.defaults, options),
 			elementArray = [];
 
-		function Scroller() {
-			this.ticking = false;
+		let Scroller = () => {
 			this.lastScrollY = 0;
-		}
+		};
+
 		Scroller.prototype = {
 			init: function() {
 				window.addEventListener('scroll', this.onScroll.bind(this), false);
@@ -27,7 +40,7 @@
 			onScroll: function() {
 				this.scrollY = window.scrollY;
 				this.direction = this.scrollDirection();
-				this.requestTick();
+				window.requestAnimationFrame(this.update.bind(this));
 			},
 			scrollDirection: function() {
 				var dir = 'down';
@@ -36,15 +49,8 @@
 				}
 				return dir;
 			},
-			requestTick: function() {
-				if (!this.ticking) {
-					window.requestAnimFrame(this.update.bind(this));
-				}
-				this.ticking = true;
-			},
 			update: function() {
 				var scrollDiff = this.scrollY - this.lastScrollY;
-				this.ticking = false;
 
 				$.map(elementArray, function(elem) {
 					if (scroller.direction === 'down') {
@@ -75,12 +81,13 @@
 
 		return $(this).each(function() {
 			var element = $(this),
-			stickyClass = opts.stick === 'top' ? opts.topClass : opts.bottomClass;
+				stickyClass = opts.stick === 'top' ? opts.topClass : opts.bottomClass;
 			element.translateY = 0;
 			element.maxTranslateY = element.outerHeight();
 			element.addClass(stickyClass);
+			element.css('position', 'fixed');
 			if (opts.stick === 'bottom') {
-				element.css('margin-bottom', '-'+element.maxTranslateY+'px');
+				element.css('margin-bottom', '-' + element.maxTranslateY + 'px');
 			}
 			elementArray.push(element);
 		});

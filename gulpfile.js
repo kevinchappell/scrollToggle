@@ -2,47 +2,25 @@
 
 var gulp = require('gulp'),
 	ugly = require('gulp-uglify'),
-	autoprefixer = require('gulp-autoprefixer'),
-	sass = require('gulp-sass'),
-	cssmin = require('gulp-cssmin'),
 	concat = require('gulp-concat'),
+	babel = require('gulp-babel'),
 	bsync = require('browser-sync'),
-	reload = bsync.reload,
-	rename = require("gulp-rename");
+	reload = bsync.reload;
 
 gulp.task('watch', function() {
 	gulp.watch(['src/js/*.js'], ['js']).on('change', reload);
-	gulp.watch(['src/sass/*.scss'], ['css']).on('change', reload);
 	gulp.watch("example/*.html").on('change', reload);
-	gulp.watch("example/*.css").on('change', reload);
-});
-
-gulp.task('css', function() {
-	return gulp.src("src/sass/*.scss")
-		.pipe(sass({
-			style: 'expanded'
-		}))
-		.pipe(cssmin())
-		.pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-		.pipe(rename({
-			suffix: '.min'
-		}))
-		.pipe(gulp.dest("dist/css"))
-		.pipe(reload({
-			stream: true
-		}));
 });
 
 gulp.task('js', function() {
 	gulp.src([
-			'src/js/scroll-toggle.js'
+			'src/scroll-toggle.js'
 		])
+		.pipe(babel())
+		.pipe(gulp.dest('dist/'))
 		.pipe(ugly())
 		.pipe(concat('scroll-toggle.min.js'))
-		.pipe(gulp.dest('dist/js/'));
+		.pipe(gulp.dest('dist/'));
 });
 
 gulp.task('demo', function() {
@@ -52,4 +30,4 @@ gulp.task('demo', function() {
 	});
 });
 
-gulp.task('default', ['js', 'css', 'watch', 'demo']);
+gulp.task('default', ['js', 'watch', 'demo']);
