@@ -20,13 +20,15 @@ gulp.task('js', function() {
 		.pipe(gulp.dest('dist/'))
 		.pipe(ugly())
 		.pipe(concat('scroll-toggle.min.js'))
+		.pipe(gulp.dest('example/'))
 		.pipe(gulp.dest('dist/'));
 });
 
 gulp.task('demo', function() {
 	bsync({
-		server: "./",
-		index: "./example/index.html"
+		server: {
+			baseDir: "./example/"
+		}
 	});
 });
 
