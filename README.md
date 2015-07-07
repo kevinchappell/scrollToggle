@@ -5,7 +5,7 @@ A jQuery plugin for making sticky mobile menus that toggle themselves accordnig 
 
 Has support for bottom or top stickiness.
 
-## [Demo](http://kevinchappell.github.io/scrollToggle/example)
+## [Demo](http://kevinchappell.github.io/scrollToggle)
 ## [Used by Flipboard!](https://about.flipboard.com/)
 
 ## Installation
